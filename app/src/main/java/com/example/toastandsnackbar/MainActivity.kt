@@ -1,14 +1,14 @@
 package com.example.toastandsnackbar
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import com.example.toastandsnackbar.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
+import com.kishandonga.csbx.CustomSnackbar
 import www.sanju.motiontoast.MotionToast
 import www.sanju.motiontoast.MotionToastStyle
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,10 +21,16 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.btnSnackbar.setOnClickListener {
-            val snackbar = Snackbar.make(binding.root, "Berhasil muncul", Snackbar.LENGTH_INDEFINITE)
-            snackbar.setAction("Retry"){
-                Snackbar.make(binding.root, "Retry di pencet", Snackbar.LENGTH_SHORT).show()
-            }.show()
+            val sb = CustomSnackbar(this@MainActivity)
+            sb.message("Snackbar clicked.")
+            sb.padding(15)
+            sb.cornerRadius(15f)
+            sb.duration(Snackbar.LENGTH_LONG)
+            sb.withAction(android.R.string.ok) { snackbar: Snackbar ->
+                snackbar.dismiss()
+                null
+            }
+            sb.show()
         }
 
         binding.btnToast.setOnClickListener {

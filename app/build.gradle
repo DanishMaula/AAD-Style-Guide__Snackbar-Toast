@@ -51,4 +51,5 @@ dependencies {
 
 
     implementation 'com.github.Spikeysanju:MotionToast:1.4'
+    implementation 'com.github.kishandonga:custom-snackbar:1.1'
 }
