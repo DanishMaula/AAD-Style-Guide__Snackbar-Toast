@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
 import com.example.toastandsnackbar.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
+import www.sanju.motiontoast.MotionToast
+import www.sanju.motiontoast.MotionToastStyle
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +28,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnToast.setOnClickListener {
-         Toast.makeText(this, "Toast di tekan", Toast.LENGTH_SHORT).show()
+            MotionToast.darkColorToast(this,"Delete all history!", "Deleted All",
+                MotionToastStyle.DELETE,
+                MotionToast.GRAVITY_BOTTOM,
+                MotionToast.LONG_DURATION,
+                ResourcesCompat.getFont(this,R.font.helvetica_regular))
+
         }
     }
 }
