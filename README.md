@@ -38,13 +38,6 @@ Additional notes on how to deploy this on a live or release system. Explaining t
 * Release:
 * Development:
 
-### Branches
-
-* Master:
-* Feature:
-* Bugfix:
-* etc...
-
 ## Additional Documentation and Acknowledgments
 
 * Project folder on server:
